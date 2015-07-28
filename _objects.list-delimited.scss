@@ -1,0 +1,41 @@
+// 
+// Declarations  
+// ========================================================================== 
+
+// 
+// Defaults:
+// 
+
+$bare-list-delimited-char:		  	"|" !default;
+
+/* 
+   #list-delimited
+   ========================================================================== */
+
+/**
+ * The list-delimited object creates delimited, inline lists.
+ *
+ * Usage:
+ *
+ * <ul class="o-list-delimited">
+ *     <li></li>
+ *     <li></li>
+ *     <li></li>
+ * </ul>
+ */
+
+.o-list-delimited {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li {
+		display: inline-block;
+
+		+ li:before {
+			content: "\00A0" $bare-list-delimited-char "\00A0";
+		}		
+	}
+}
+
+
